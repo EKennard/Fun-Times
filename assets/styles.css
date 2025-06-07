@@ -1,0 +1,159 @@
+
+
+/* Google fonts link */
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Fleur+De+Leah&family=Island+Moments&family=MonteCarlo&family=Poiret+One&display=swap');
+
+/* css variables */
+:root {
+
+  /* FONTS */
+  --primary-font: "Rubik Puddles", system-ui;
+  --secondary-font: "Julee", cursive;
+  /* COLOURS */
+  --primary-color: rgb(103, 14, 97);
+  --secondary-color: rgb(239, 16, 224);
+  --primary-highlight-color: rgb(103, 14, 97, 0.894);
+}
+
+/* .rubik-puddles-regular {
+  font-family: "Rubik Puddles", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.julee-regular {
+  font-family: "Julee", cursive;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+
+/* ------------------------------------------ Global styles -------------------------------------------*/
+.container-fluid {
+  padding: 0%;
+}
+
+body {
+  background-color: var(--primary-color)
+}
+
+h1 {
+  font-family: var(--primary-font);
+  font-size: 20rem;
+}
+
+h2 {
+  padding-bottom: 0.5em;
+}
+
+h3 {
+  padding: 0.5rem 0 0.5rem 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: center;
+  font-family: var(--secondary-font);
+  font-weight: 1000;
+}
+
+
+p,
+li {
+  text-align: center;
+  font-family: var(--secondary-font);
+  font-weight: 1000;
+  font-size: larger;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+.section {
+  padding-top: 4rem;
+}
+
+#title {
+  font-size: 4.5rem;
+  font-family: var(--primary-font);
+}
+
+/* ---------------------------------------------------nav--------------------------------------------------- */
+/* ----navbar---- */
+.navbar {
+  position: fixed;
+  padding: 0;
+  height: 70px;
+}
+
+.navbar-brand img {
+  width: 60px;
+  padding-top: 0.5em;
+}
+
+#nav-menu {
+  background-color: var(--primary-highlight-color);
+}
+
+#nav-menu li:hover {
+  background-color: var(--secondary-color);
+}
+
+#menu-button {
+  background-color: var(--primary-highlight-color);
+  font-family: var(--secondary-font);
+  border-color: var(--secondary-color);
+  color: black;
+  font-weight: 1000;
+  font-size: larger;
+  text-align: center;
+  
+}
+
+#menu-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* -----Header ----*/
+
+#header {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+#hero-title {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* --main --- */
+
+
+/* -Links---- */
+
+#game-links .card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.card-img-overlay .card-title {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: black;
+  justify-content: center;
+}
+
+
+
+
+
