@@ -1,5 +1,3 @@
-
-
 /* Google fonts link */
 @import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Fleur+De+Leah&family=Island+Moments&family=MonteCarlo&family=Poiret+One&display=swap');
 
@@ -40,6 +38,7 @@ body {
 h1 {
   font-family: var(--primary-font);
   font-size: 20rem;
+  font-weight: 1000;
 }
 
 h2 {
@@ -49,7 +48,7 @@ h2 {
 h3 {
   padding: 0.5rem 0 0.5rem 0;
 }
-h1,
+
 h2,
 h3,
 h4,
@@ -72,9 +71,6 @@ h2 {
   font-size: 3em;
 }
 
-.section {
-  padding-top: 4rem;
-}
 
 #title {
   font-size: 4.5rem;
@@ -110,7 +106,7 @@ h2 {
   font-weight: 1000;
   font-size: larger;
   text-align: center;
-  
+
 }
 
 #menu-button:hover {
@@ -135,6 +131,62 @@ h2 {
 
 /* --main --- */
 
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #e9ecef;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* noughts and crosses */
+
+/* #noughts-and-crosses {
+  /* allows the .crosses child element divs to align in rows and columns automatically. */
+  display: grid;
+  /* This controls how many columns your grid will have. repeat(3, 1fr);
+  means: 3 → You want 3 columns. 1fr → "Fractional Unit, meaning each column should take up equal space. */
+  grid-template-columns: repeat(3, 1fr);
+  /* Adds spacing between items in the grid */
+  gap: 10px;
+  max-width: ;
+} */
+
+
+/* .crosses {
+  /* display: grid;
+  justify-content: center;
+  align-items: center; */
+  height: 100px;
+  width: 100px;
+  /* padding: 0.5px; */
+} */
 
 /* -Links---- */
 
@@ -145,15 +197,11 @@ h2 {
   margin-bottom: 1rem;
 }
 
+/* 
 .card-img-overlay .card-title {
   height: 100%;
   display: flex;
   align-items: center;
   color: black;
   justify-content: center;
-}
-
-
-
-
-
+} */
