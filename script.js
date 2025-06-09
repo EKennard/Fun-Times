@@ -16,20 +16,23 @@ const board = document.querySelectorAll(".cell");
 // This returns a list (called a NodeList) of all matching elements, which you can loop through and manipulate.
 
 const statusText = document.getElementById("status");
+// - Selects the text that displays whose turn it is.
+
 const resetBtn = document.getElementById("reset");
 // - document.querySelectorAll(".cell"): Finds all the squares on the board.
 // - document.getElementById("status"): Gets the status text that tells whose turn it is.
 // - document.getElementById("reset"): Gets the reset button so we can restart the game.
-// These elements will be used later when we update the board and reset the game.
+// These variables store references to elements so we can modify them in JavaScript and will be used later when we update the board and reset the game.
 
 // 2. Setting Up Game Variables
 // Next, we need to create variables to track the game state.
 let currentPlayer = "X";
 let gameActive = true;
 let boardState = ["", "", "", "", "", "", "", "", ""]; // Represents the 3x3 grid
-// - currentPlayer = "X": Keeps track of whose turn it is.
+// - currentPlayer = "X": Keeps track of whose turn it is and starts the game with Player X.
 // - gameActive = true: Ensures the game runs until a player wins or a draw occurs.
-// - also can be written as: let boardState = Array(9).fill(""): Creates an array with 9 empty spots (one for each square). This represents the game board.
+// - also can be written as: let boardState = Array(9).fill(""): Creates an array with 9 empty spots (one for each square). This represents the game board. - "X" or "O" will replace empty strings ("") when a player makes a move.
+
 
 // 3. Defining Winning Combinations
 // Now, we list the possible ways a player can win.
@@ -38,7 +41,7 @@ const winningCombinations = [
     [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
     [0, 4, 8], [2, 4, 6]            // Diagonals
 ];
-// - This array of arrays represents the winning positions.
+// - - This list of arrays represents winning patterns
 // - Each inner array contains the indexes of a winning row, column, or diagonal.
 // For example, [0, 1, 2] means if the first three squares have the same mark, that player wins.
 
@@ -47,7 +50,8 @@ const winningCombinations = [
 board.forEach((cell, index) => {
     cell.addEventListener("click", function () {
 // - board.forEach(...): Loops through all the squares.
-// - cell.addEventListener("click", () => { ... }): Waits for each square to be clicked.
+// - .addEventListener("click", function() {...}) listens for a player's click on a square.
+// - index gives each square’s position (0-8).
 // When a square is clicked, the game will check if it's empty and update it.
 
 // 5. Preventing Moves in Already Filled Squares
@@ -74,8 +78,12 @@ board.forEach((cell, index) => {
             gameActive = false;
             return; // Stop further moves
         }
-// - checkWinner(): Calls a function to determine if there's a winner.
-// - If there is a winner, it updates the status message and stops the game.
+// - Calls checkWinner() to see if the current player wins.
+// - If someone wins:
+// - Updates the status message.
+// - Ends the game (gameActive = false).
+// - Returns early to stop further moves.
+
 
 // 8. Checking for a Draw
 // If no one wins and the board is full, the game announces a draw.
@@ -90,9 +98,11 @@ board.forEach((cell, index) => {
             gameActive = false;
             return;
         }
-  
-// - !boardState.includes(""): Checks if all squares are filled.
-// - If true, it updates the status with "It's a draw!" and ends the game.
+// - isDraw = true: Assumes the board is full unless proven otherwise.
+// - Loop through boardState:
+// - If an empty square ("") exists, it’s not a draw.
+// - If all squares are filled, update status and stop the game
+
 
 // 9. Switching Turns
 // If the game isn’t over, it switches players.
@@ -102,35 +112,53 @@ board.forEach((cell, index) => {
         } else {
             currentPlayer = "X";
         }
-
-// - currentPlayer = currentPlayer === "X" ? "O" : "X": If the player was "X", switch to "O", and vice versa.
-// - Updates the status message to show the next player’s turn.
-
+        // Update turn status
+        statusText.textContent = currentPlayer + "'s turn";
+//  - Updates the text after each move so players know whose turn it is.
+// - If currentPlayer is "X", switch to "O".
+// - Otherwise, switch back to "X".
+// This ensures players alternate turns correctly.
     });
 });
-
-// 11. Resetting the Game
-// The reset button allows players to start over.
-resetBtn.addEventListener("click", () => {
-    boardState.fill("");
-    board.forEach(cell => cell.textContent = "");
-    currentPlayer = "X";
-    statusText.textContent = "X's turn";
-    gameActive = true;
-});
-// - boardState.fill(""): Clears the board array.
-// - board.forEach(...): Clears all squares visually.
-// - Resets current player to "X" and updates the status message.
-// - gameActive = true: Makes the game playable again.
-
 
 // 10. Creating the Check-Winner Function
 // This function determines if a player has won.
 function checkWinner() {
-    return winningCombinations.some(combination =>
-        combination.every(index => boardState[index] === currentPlayer)
-    );
+    for (let i = 0; i < winningCombinations.length; i++) {
+        let combination = winningCombinations[i];
+        let first = boardState[combination[0]];
+        let second = boardState[combination[1]];
+        let third = boardState[combination[2]];
+
+        if (first !== "" && first === second && first === third) {
+            return true; // A winning combination was found
+        }
+    }
+    return false; // No winner yet
 }
-// - winningCombinations.some(...): Loops through all winning conditions.
-// - combination.every(...): Checks if all squares in a winning row, column, or diagonal match the current player’s symbol.
-// - If a match is found, the function returns true, meaning the game ends.
+// - Loops through each winning pattern.
+// - Checks if all three squares in a pattern contain the same symbol ("X" or "O").
+// - If a match is found, returns true and ends the game.
+
+// 11. Resetting the Game
+// The reset button allows players to start over.
+resetBtn.addEventListener("click", function () {
+// - Listens for clicks on the reset button.
+    for (let i = 0; i < boardState.length; i++) {
+        boardState[i] = ""; // Clear board state
+    }
+// - Loops through boardState, removing all symbols to reset the board.
+    board.forEach(function (cell) {
+        cell.textContent = ""; // Clear text on the board
+    });
+// - Clears the squares in the HTML.
+    currentPlayer = "X"; // Reset the first player
+    statusText.textContent = "X's turn";
+    gameActive = true; // Reactivate the game
+});
+// - Resets:
+// - Player X as first player.
+// - Status message.
+// - gameActive = true, allowing the game to start again.
+
+
