@@ -37,7 +37,6 @@ body {
 
 h1 {
   font-family: var(--primary-font);
-  font-size: 20rem;
   font-weight: 1000;
 }
 
@@ -58,7 +57,6 @@ h5 {
   font-weight: 1000;
 }
 
-
 p,
 li {
   text-align: center;
@@ -71,11 +69,34 @@ h2 {
   font-size: 3em;
 }
 
-
 #title {
-  font-size: 4.5rem;
+  font-size: 10rem;
   font-family: var(--primary-font);
 }
+
+
+/* enter page */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enter-btn {
+  height: 15rem;
+  width: 30rem;
+  background-color: #5de509;
+  font-family: var(--secondary-font);
+  font-size:10rem;
+}
+
+.enter-btn:hover {
+  background-color: #ec0de1;
+}
+
+
+
 
 /* ---------------------------------------------------nav--------------------------------------------------- */
 /* ----navbar---- */
@@ -190,11 +211,12 @@ h2 {
 
 /* -Links---- */
 
-#game-links .card {
+.game-link-buttons {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 1rem;
+  width
 }
 
 /* 
@@ -205,3 +227,22 @@ h2 {
   color: black;
   justify-content: center;
 } */
+
+
+
+
+
+.sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fadeOut 0.8s ease-out;
+}
+
+@keyframes fadeOut {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
