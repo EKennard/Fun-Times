@@ -96,6 +96,22 @@ h2 {
 }
 
 
+/* entry page */
+
+.sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fadeOut 0.8s ease-out;
+}
+
+@keyframes fadeOut {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
 
 
 /* ---------------------------------------------------nav--------------------------------------------------- */
@@ -152,6 +168,8 @@ h2 {
 
 /* --main --- */
 
+/* noughts and crosses */
+
 #board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -176,19 +194,7 @@ h2 {
     background-color: #e9ecef;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* noughts and crosses */
-
-/* #noughts-and-crosses {
+#noughts-and-crosses {
   /* allows the .crosses child element divs to align in rows and columns automatically. */
   display: grid;
   /* This controls how many columns your grid will have. repeat(3, 1fr);
@@ -196,19 +202,27 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   /* Adds spacing between items in the grid */
   gap: 10px;
-  max-width: ;
-} */
+} 
 
+/* Rock, Paper, Scissors */
 
-/* .crosses {
-  /* display: grid;
-  justify-content: center;
-  align-items: center; */
+.rps-btn {
   height: 100px;
-  width: 100px;
-  /* padding: 0.5px; */
-} */
+  width: 150px;
+  border: 10px solid #0cdb24;
+  font-family: var(--secondary-font);
+  font-size: 30px;
+  background-color: #ec0de1;
+}
+.rps-btn:hover {
+  background-color: #d2ec0d;
+}
 
+
+.reset-btn {
+  font-family: var(--secondary-font);
+  size: 50px
+}
 /* -Links---- */
 
 .game-link-buttons {
@@ -216,33 +230,9 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 1rem;
-  width
 }
 
-/* 
-.card-img-overlay .card-title {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  color: black;
-  justify-content: center;
-} */
 
 
 
 
-
-.sparkle {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: fadeOut 0.8s ease-out;
-}
-
-@keyframes fadeOut {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(2); opacity: 0; }
-}

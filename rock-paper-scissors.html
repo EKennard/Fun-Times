@@ -7,10 +7,8 @@
     <!-- Meta tags and viewport settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="..">
-    <meta name="keywords"
-        content="...">
+    <meta name="description" content="..">
+    <meta name="keywords" content="...">
 
     <!-- favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="...">
@@ -32,8 +30,8 @@
 
     <!-- Google fonts link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Julee&family=Rubik+Puddles&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julee&family=Rubik+Puddles&display=swap" rel="stylesheet">
 
 </head>
 <!-------------------------------------------------------Body----------------------------------------------------->
@@ -47,20 +45,21 @@
                 <img src="..." alt="Logo">
             </a>
             <div class="dropdown">
-                <button id="menu-button" class="btn btn-primary dropdown-toggle" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <button id="menu-button" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     Menu
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" id="nav-menu">
 
-                    <li class="nav-item active" aria-current="page">
+                    <li class="nav-item">
                         <a class="nav-link" href="intro.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="noughts_and_crosses.html">Noughts and Crosses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="rock-paper-scissors.html">Rock, Papar, Scissors</a>
+                        <a class="nav-link active" aria-current="page" href="rock-paper-scissors.html">Rock, Papar,
+                            Scissors</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="..."></a>
@@ -79,31 +78,39 @@
     <header class="container-fluid" id="header">
         <div class="container-fluid">
             <div class="hero-image" id="hero">
-                <img id="hero-image" class="image-fade-out" src=""
-                    alt="">
+                <img id="hero-image" class="image-fade-out" src="" alt="">
             </div>
         </div>
         <div id="hero-title">
             <h1 id="title">Fun Times</h1>
-            
+
         </div>
 
     </header>
 
     <!--- main element of the page-------->
     <main>
-        <section id="game-links" class="container section">
-            <div class="row">
-
-                <div class="col-6 col-md-3 col-xl-3 game-link-buttons">
-                        <a class="btn btn-primary" href="noughts_and_crosses.html" target="_self" aria-label="Play Noughts and Crosses">Noughts & Crosses</a>
-                    </div>
-                </div>
-
-                
+        <section id="rps-game-buttons">
+            <div class="container rock-paper-scissors">
+                <button class="rps-btn" id="rock">ROCK</button>
+                <button class="rps-btn" id="paper">PAPER</button>
+                <button class="rps-btn" id="scissors">SCISSORS</button>
             </div>
         </section>
 
+        <section id="rps-game-results">
+            <div class="container">
+                <p class="game-result" id="player-choice"></p>
+                <p class="game-result" id="computer-choice"></p>
+                <p class="game-result" id="game-result"></p>
+            </div>
+        </section>
+
+        <section id="rps-reset">
+            <div class="container">
+                <button class="reset-btn btn btn-primary" id="reset">Play Again</button>
+            </div>
+        </section>
     </main>
 
     <!---------------------------------------------------- footer ------------------------------------------------->
@@ -111,7 +118,7 @@
 
 
     <footer class="pagefooter">
-      
+
     </footer>
 
     <!-- Bootstrap js link -->
