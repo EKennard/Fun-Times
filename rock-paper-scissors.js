@@ -1,19 +1,13 @@
 // Player clicks "Rock" button
-//           ↓
-// JavaScript detects the click using addEventListener
-//           ↓
-// Anonymous function runs:
-//     → Calls playGame("Rock")
-//           ↓
+// add Event Listener
+// Call playGame("Rock")    
 // Inside playGame("Rock"):
-//     → Computer randomly picks "Rock", "Paper", or "Scissors"
-//           ↓
+// Computer randomly picks "Rock", "Paper", or "Scissors"
 // Compare player and computer choices:
-//     → Check if it's a draw
-//     → Check if player wins
-//     → Otherwise, computer wins
-//           ↓
-// Display the result using resultText.textContent
+// Check if player wins
+// Check if it's a draw
+// Otherwise, computer wins
+// Display the result
 
 
 const choice = ["ROCK", "PAPER", "SCISSORS"];
@@ -21,7 +15,7 @@ const choice = ["ROCK", "PAPER", "SCISSORS"];
 const rockBtn = document.getElementById("rock");
 rockBtn.addEventListener("click", function () {
     playGame("ROCK")
-})
+});
 
 const paperBtn = document.getElementById("paper");
 paperBtn.addEventListener("click", function () {
@@ -33,27 +27,58 @@ scissorsBtn.addEventListener("click", function () {
     playGame("SCISSORS")
 });
 
-const winningCombinations = (choice [[0, 2], [1, 0], [2, 1]]);
-
-// // need to set these to write not get? put these choices in a function?
-// const playerChoice = document.getElelemtById (player-choice);
-// const computerChoice = choice(Math.floor(Math.random) * 3);
-
 function playGame(playerChoice) {
-    let randonIndex = Math.floor(Math.random() *3);
-    let computerChoice = choice[RandomIndex];
+    let randomIndex = Math.floor(Math.random() * 3);
+    let computerChoice = choice[randomIndex];
+    let results = document.getElementById("game-result");
 
-    // if and else statements here
+    if (playerChoice === "ROCK" & computerChoice === "SCISSORS") {
+        results.textContent = "You win!"
+    }
+    else if (playerChoice === "PAPER" & computerChoice === "ROCK") {
+        results.textContent = "You win!"
+    }
+    else if (playerChoice === "SCISSORS" & computerChoice === "PAPER") {
+        results.textContent = "You win!"
+    }
+    else if (playerChoice === computerChoice) {
+        results.textContent = "It's a draw"
+    }
+    else {
+        results.textContent = "You lose!"
+    }
 
+    // function to show player and computer choices in <p> elements
+    function displayPlayerChoice(playerChoice) {
+        document.getElementById("playerChoice").textContent = "You chose [$playerChoice]";
+    }
+
+    function displayComputerChoice(computerChoice) {
+        document.getElementById("computerChoice").textContent = "Copmputer chose $[computerChoice]";
+    }
+
+    console.log("$[displayPlayerChoice]", " ", "$[displayComputerChoice]")
+
+    //score feature
+    let playerScore = 0;
+    let computerScore = 0;
+
+    if (results === "You win!") {
+        document.getElementById(playerScore).textContent = playerScore++
+    }
+    else if (results === "You lose!") {
+        document.getElementById(computerScore).textContent = computerScore++
+    }
 }
 
-const results = document.getElementById("game-result");
-// function for game results here
+// reset game button
 
+const resetBtn = document.getEmelemtById("reset")
 
-const resetBtn = document.getElementById("reset");
-// function for reset button here
-
+function resetGame() {
+    document.addEventListener("click", resetGame);
+    results.textContent = "";
+}
 
 
 
