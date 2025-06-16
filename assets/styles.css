@@ -53,22 +53,25 @@ h3 {
 h2,
 h3,
 h4,
-h5 {
+h5, {
   text-align: center;
   font-family: var(--secondary-font);
   font-weight: 1000;
   color: white;
   font-size: 2rem;
-
 }
 
-p,
+p {
+color:white;
+font-size: 2rem;
+}
+
 li {
   text-align: center;
   font-family: var(--secondary-font);
   font-weight: 1000;
   font-size: 2rem;
-  color: white;
+  color: black;
 }
 
 h2 {
@@ -76,7 +79,7 @@ h2 {
 }
 
 #title {
-  font-size: 10rem;
+  font-size: clamp(3rem, 10vw, 10rem);
   font-family: var(--primary-font);
 }
 
@@ -87,10 +90,9 @@ p.logo {
   display:flex;
   justify-content: center;
   align-items: center;
-  font-size: 5rem;
+  font-size: clamp(3rem, 10vw, 5rem);
   color: #0cdb24 
 }
-
 
 /* enter page */
 
@@ -149,7 +151,7 @@ p.logo {
 }
 
 #nav-menu li:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-highlight-color);
 }
 
 #menu-button {
@@ -164,7 +166,7 @@ p.logo {
 }
 
 #menu-button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-highlight-color);
 }
 
 /* -----Header ----*/
@@ -224,43 +226,32 @@ p.logo {
 /* Rock, Paper, Scissors */
 
 .rps-btn {
-  height: 200px;
-  width: 300px;
+  width: clamp(8rem, 25vw, 18rem);
+  height: clamp(4rem, 14vw, 12rem);
   border: 10px solid #0cdb24;
   font-family: var(--secondary-font);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 3rem);
   background-color: #ec0de1;
-
 }
+
 .rps-btn:hover {
   background-color: var(--secondary-color);
 }
 
-
-.reset-btn {
+.general-button{
   font-family: var(--secondary-font);
   size: 100px;
   font-size: 2rem;
-  color: 
+  background-color: var(--primary-highlight-color);
+  color:black
 }
 
-.reset-btn:hover {
-  background-color: var(--secondary-color);
+.general-button:hover {
+  background-color: var(--secondary-highlight-color);
   color: black;
-  
-}
-/* -Links---- */
-
-.game-link-buttons {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
 }
 
 /* to do list */
-
-
 
 .completed { 
   text-decoration: line-through;
