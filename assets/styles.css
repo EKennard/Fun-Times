@@ -74,6 +74,16 @@ h2 {
   font-family: var(--primary-font);
 }
 
+p.logo {
+  font-family:var(--primary-font);
+  height: 100px;
+  width: 100px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+
 
 /* enter page */
 

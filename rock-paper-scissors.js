@@ -27,18 +27,29 @@ scissorsBtn.addEventListener("click", function () {
     playGame("SCISSORS")
 });
 
+//score feature
+    let playerScore = 0;
+    let computerScore = 0;
+
+    if (results.textContent === "You win!") {
+        document.getElementById(player-score).textContent = playerScore++
+    }
+    else if (results.textContent === "You lose!") {
+        document.getElementById(computer-score).textContent = computerScore++
+    }
+
 function playGame(playerChoice) {
     let randomIndex = Math.floor(Math.random() * 3);
     let computerChoice = choice[randomIndex];
     let results = document.getElementById("game-result");
 
-    if (playerChoice === "ROCK" & computerChoice === "SCISSORS") {
+    if (playerChoice === "ROCK" && computerChoice === "SCISSORS") {
         results.textContent = "You win!"
     }
-    else if (playerChoice === "PAPER" & computerChoice === "ROCK") {
+    else if (playerChoice === "PAPER" && computerChoice === "ROCK") {
         results.textContent = "You win!"
     }
-    else if (playerChoice === "SCISSORS" & computerChoice === "PAPER") {
+    else if (playerChoice === "SCISSORS" && computerChoice === "PAPER") {
         results.textContent = "You win!"
     }
     else if (playerChoice === computerChoice) {
@@ -50,36 +61,24 @@ function playGame(playerChoice) {
 
     // function to show player and computer choices in <p> elements
     function displayPlayerChoice(playerChoice) {
-        document.getElementById("playerChoice").textContent = "You chose [$playerChoice]";
+        document.getElementById("playerChoice").textContent = `You chose ${playerChoice}`;
     }
 
     function displayComputerChoice(computerChoice) {
-        document.getElementById("computerChoice").textContent = "Copmputer chose $[computerChoice]";
+        document.getElementById("computerChoice").textContent = `Computer chose ${computerChoice}`;
     }
 
-    console.log("$[displayPlayerChoice]", " ", "$[displayComputerChoice]")
-
-    //score feature
-    let playerScore = 0;
-    let computerScore = 0;
-
-    if (results === "You win!") {
-        document.getElementById(playerScore).textContent = playerScore++
-    }
-    else if (results === "You lose!") {
-        document.getElementById(computerScore).textContent = computerScore++
-    }
+    // console.log(`${displayPlayerChoice}`, " ", `${displayComputerChoice}`)
 }
 
 // reset game button
 
-const resetBtn = document.getEmelemtById("reset")
+const resetBtn = document.getElementById("reset");
+resetBtn.addEventListener("click", resetGame);
 
 function resetGame() {
-    document.addEventListener("click", resetGame);
-    results.textContent = "";
+    document.getElementById("game-results").textContent = "";
+    document.getElementById("player-choice").textContent = "";
+    document.getElementById("computer-choice").textContent = "";
 }
-
-
-
 
