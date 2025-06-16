@@ -27,16 +27,8 @@ scissorsBtn.addEventListener("click", function () {
     playGame("SCISSORS")
 });
 
-//score feature
-    let playerScore = 0;
-    let computerScore = 0;
-
-    if (results.textContent === "You win!") {
-        document.getElementById(player-score).textContent = playerScore++
-    }
-    else if (results.textContent === "You lose!") {
-        document.getElementById(computer-score).textContent = computerScore++
-    }
+let playerScore = 0;
+let computerScore = 0;
 
 function playGame(playerChoice) {
     let randomIndex = Math.floor(Math.random() * 3);
@@ -59,16 +51,34 @@ function playGame(playerChoice) {
         results.textContent = "You lose!"
     }
 
+    //score feature
+    if (results.textContent === "You win!") {
+        playerScore++;
+        document.getElementById("playerScore").textContent = `Player Score: ${playerScore}`;
+    } else if (results.textContent === "You lose!") {
+        computerScore++;
+        document.getElementById("computerScore").textContent = `Computer Score: ${computerScore}`;
+    }
+
+    // if (results.textContent === "You win!") {
+    //     document.getElementById("player-score").textContent = playerScore++
+    // }
+    // else if (results.textContent === "You lose!") {
+    //     document.getElementById("computer-score").textContent = computerScore++
+
     // function to show player and computer choices in <p> elements
     function displayPlayerChoice(playerChoice) {
-        document.getElementById("playerChoice").textContent = `You chose ${playerChoice}`;
+        document.getElementById("player-choice").textContent = `You chose ${playerChoice}`;
     }
 
     function displayComputerChoice(computerChoice) {
-        document.getElementById("computerChoice").textContent = `Computer chose ${computerChoice}`;
+        document.getElementById("computer-choice").textContent = `Computer chose ${computerChoice}`;
     }
 
+    displayPlayerChoice(playerChoice);
+    displayComputerChoice(computerChoice);
     // console.log(`${displayPlayerChoice}`, " ", `${displayComputerChoice}`)
+
 }
 
 // reset game button
@@ -77,8 +87,10 @@ const resetBtn = document.getElementById("reset");
 resetBtn.addEventListener("click", resetGame);
 
 function resetGame() {
-    document.getElementById("game-results").textContent = "";
+    document.getElementById("game-result").textContent = "";
     document.getElementById("player-choice").textContent = "";
     document.getElementById("computer-choice").textContent = "";
+    document.getElementById("playerScore").textContent = "Player Score: 0";
+    document.getElementById("computerScore").textContent = "Computer Score: 0";
 }
 
