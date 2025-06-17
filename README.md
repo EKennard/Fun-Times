@@ -8,4 +8,6 @@
 
 #### - Rock, Paper, Scissors - writen by me - in progress still.
 
-#### - To-Do- List - Live walk through in Coding Institute Guided Session
+#### - To-Do List - Live walk through in Coding Institute Guided Session
+
+#### - Quiz - Live session walkthrough project

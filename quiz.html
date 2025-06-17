@@ -51,7 +51,7 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" id="nav-menu">
 
-                    <li class="nav-item active" aria-current="page">
+                    <li class="nav-item">
                         <a class="nav-link" href="intro.html">Home</a>
                     </li>
                     <li class="nav-item">
@@ -63,7 +63,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="to-do-list.html">To-Do List</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active" aria-current="page">
                         <a class="nav-link" href="quiz.html">Movie Quiz</a>
                     </li>
                     <li class="nav-item">
@@ -89,25 +89,29 @@
 
     <!--- main element of the page-------->
     <main>
-        <section id="game-links" class="container section">
-            <div class="row container">
+        <h2>Movie Quote Quiz</h2>
+        <div class="container text-center">
+        
+        <div id="question-area">
+            <div id="question">Lorem ipsum</div>
 
-                <div class="col-6 col-md-3 col-xl-3 game-link-buttons">
-                    <a class="btn btn-primary general-button" href="noughts_and_crosses.html" target="_self"
-                        aria-label="Play Noughts and Crosses">Noughts & Crosses</a>
-                    <a class="btn btn-primary general-button" href="rock-paper-scissors.html" target="_self"
-                        aria-label="Play Rock, Papaer, Scissors">Rock, Paper, Scissors</a>
-                    <a class="btn btn-primary general-button" href="to-do-list.html" target="_self"
-                        aria-label="Go to to do list">To-Do
-                        List</a>
-                    <a class="btn btn-primary general-button" href="quiz.html" target="_self"
-                        aria-label="Go to Movie Quiz">Movie Quiz</a>
-                </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 answer">Answer One</div>
+                <div class="col-12 col-sm-6 answer">Answer Two</div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 answer">Answer Three</div>
+                <div class="col-12 col-sm-6 answer">Answer Four</div>
             </div>
 
+            <div id="feedback"></div>
 
-            </div>
-        </section>
+            <div id="next">Next Question</div>
+        </div>
+
+    </div>
+            
+       
 
     </main>
 
@@ -145,6 +149,7 @@
                 });
             });
     </script>
+    <script src="quiz.js"></script>
 </body>
 
 </html>
