@@ -1,4 +1,3 @@
-// script.js
 
 // 1.
 //This line grabs the button with the ID "fetchTrivia" and listens for a click event.
@@ -49,14 +48,14 @@ document.getElementById("fetchTrivia").addEventListener("click", function() {
 //JSON is made up of key-value pairs, enclosed in {} for objects or [] for arrays. Here’s a simple example:
 
 //ie
-{
-  "name": "Liz",
-  "skills": ["HTML", "CSS", "JavaScript"],
-  "projects": {
-    "game": "Rock-Paper-Scissors",
-    "progress": "Building animations"
-  }
-}
+// {
+//   "name": "Liz"
+//   "skills": ["HTML", "CSS", "JavaScript"],
+//   "projects": {
+//     "game": "Rock-Paper-Scissors",
+//     "progress": "Building animations"
+//   }
+// }
 
 //🔄 How It’s Used
 //- APIs: When fetching data (like MeowFacts), the API responds in JSON format.
