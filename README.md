@@ -1,6 +1,6 @@
 # Fun-Times
 
-## A place for me to practice html, css, and JS
+## A place for me to learn and practice html, css, and JS
 
 ####  - Noughts and Crosses - an IA generted game with loads of JS explanations to help me learn as I wealked along with it
 
@@ -11,3 +11,5 @@
 #### - To-Do List - Live walk through in Coding Institute Guided Session
 
 #### - Quiz - Live session walkthrough project
+
+#### - Trivia Questions API - AI walkthrough with explanations
