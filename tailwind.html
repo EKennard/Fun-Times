@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Meta tags and viewport settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="..">
+  <meta name="keywords" content="...">
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="...">
+  <link rel="icon" type="image/png" sizes="32x32" href="...">
+  <link rel="icon" type="image/png" sizes="16x16" href="...">
+
+  <!-- Font awesome js link -->
+  <script src="https://kit.fontawesome.com/ad945df9d9.js" crossorigin="anonymous"></script>
+
+  <!-- Google fonts link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Julee&family=Rubik+Puddles&display=swap" rel="stylesheet">
+
+  <title>Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-800">
+  <nav class="navbar fixed-top" data-bs-theme="light">
+    <div class="container">
+      <a class="navbar-brand text-white" href="index.html">
+        <p class="logo">FT</p>
+      </a>
+      <div class="dropdown">
+        <button id="menu-button" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Menu
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" id="nav-menu">
+
+          <li class="nav-item">
+            <a class="nav-link" href="intro.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="noughts_and_crosses.html">Noughts and Crosses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rock-paper-scissors.html">Rock, Papar, Scissors</a>
+          </li>
+          <li class="nav-item active" aria-current="page">
+            <a class="nav-link" href="to-do-list.html">To-Do List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html">Movie Quiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="trivia-api.html">Trivia Questions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="yahtzee.html">Yahtzee</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- -----------------------------------------------------Header --------------------------------------------------------------->
+  <header class="container-fluid" id="header">
+    <div class="container-fluid">
+      <div class="hero-image" id="hero">
+        <img id="hero-image" class="image-fade-out" src="" alt="">
+      </div>
+    </div>
+    <div id="hero-title">
+      <h1 id="title">Fun Times</h1>
+
+    </div>
+
+  </header>
+  <div class="max-w-5xl mx-auto py-12 px-4 text-center">
+    <h1 class="text-4xl font-bold mb-8">My Lovely Tailwind Gallery</h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <img src="assets\images\image1.jpeg" class="w-full h-auto rounded-lg shadow" alt="Image 1" />
+      <img src="assets\images\image2.jpeg" class="w-full h-auto rounded-lg shadow" alt="Image 2" />
+      <img src="assets\images\image3.jpeg" class="w-full h-auto rounded-lg shadow" alt="Image 3" />
+    </div>
+  </div>
+</body>
+
+</html>

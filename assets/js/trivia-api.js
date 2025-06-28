@@ -1,3 +1,7 @@
+//Learning how an API works with Copilot
+
+
+
 
 // 1.
 //This line grabs the button with the ID "fetchTrivia" and listens for a click event.
